@@ -1,5 +1,6 @@
 package _02_gotta_catchem_all;
 
+import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
@@ -31,8 +32,13 @@ class ExceptionsTest {
 	
 	//3. Complete the JUnit test method to test the divide method.
 	@Test
-	public void testDivideByZeroException() {
-		
+	public void testDivideByZeroException() {	
+		try {
+			em.divide(3, 0);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Input a number that is not 0");
+		}
 	}
 	
 	//4. In the ExceptionMethods class, write a method called reverseString that takes a
@@ -42,10 +48,6 @@ class ExceptionsTest {
 	//5. Complete the JUnit test method to test the reverseStringMethod.
 	@Test
 	public void testReverseString() {
-		
+		String input = "";
 	}
-	
-	
-	
-
 }

@@ -34,10 +34,12 @@ class ExceptionsTest {
 	@Test
 	public void testDivideByZeroException() {	
 		try {
-			em.divide(3, 0);
+			em.divide(4, 0);
+			fail("IllegalArgumentException not thrown");
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Input a number that is not 0");
+			em.divide(4, 2);
+			
 		}
 	}
 	
@@ -48,6 +50,12 @@ class ExceptionsTest {
 	//5. Complete the JUnit test method to test the reverseStringMethod.
 	@Test
 	public void testReverseString() {
-		String input = "";
+		try {
+			em.reverseString("");
+			fail("IllegalStateException string is passed empty");
+		} catch (Exception e) {
+			e.printStackTrace();
+			em.reverseString("Hello");
+		}
 	}
 }
